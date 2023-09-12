@@ -1,0 +1,39 @@
+﻿@model List<ProductManagement.Models.ViewModel.SuperAdminUserModel>
+
+@{
+    ViewData["Title"] = "Super Dashboard";
+    Layout = "_LayoutSuperAdmin";
+}
+<br />
+<h2>User Management</h2>
+
+<table aria-describedby="mydesc" class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var adminUser in Model)
+        {
+            <tr>
+                <td>@adminUser.Id</td>
+                <td>@adminUser.FirstName</td>
+                <td>@adminUser.LastName</td>
+                <td>@adminUser.Email</td>
+                <td>@adminUser.Role</td>
+                <td>
+                    <a asp-action="EditUser" asp-controller="SuperAdmin" asp-route-id="@adminUser.Id" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("DeleteUser", "SuperAdmin", new { id = adminUser.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

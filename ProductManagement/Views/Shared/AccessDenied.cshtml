@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Access Denied";
+
+    var user = await UserManager.GetUserAsync(User);
+    var roles = await UserManager.GetRolesAsync(user);
+
+    var layout = "_LayoutUser"; 
+    if (roles.Contains("Admin"))
+    {
+        layout = "_LayoutAdmin";
+    }
+    else if (roles.Contains("SuperAdmin"))
+    {
+        layout = "_LayoutSuperAdmin";
+    }
+
+    Layout = layout;
+}
+
+<!DOCTYPE html>
+<html xml:lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Access Denied</title>
+</head>
+<body>
+    <h2>Access Denied</h2>
+    <p>You do not have permission to access this page.</p>
+</body>
+</html>

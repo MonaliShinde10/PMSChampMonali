@@ -1,0 +1,401 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\ProductManagement.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProductManagement.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\about.png",
+      "PackagePath": "staticwebassets\\image\\about.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\add carts.png",
+      "PackagePath": "staticwebassets\\image\\add carts.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\b2.png",
+      "PackagePath": "staticwebassets\\image\\b2.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\banner.jpg",
+      "PackagePath": "staticwebassets\\image\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\banner2.jpg",
+      "PackagePath": "staticwebassets\\image\\banner2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\iphone.jpg",
+      "PackagePath": "staticwebassets\\image\\iphone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\logo.png",
+      "PackagePath": "staticwebassets\\image\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\logo2.png",
+      "PackagePath": "staticwebassets\\image\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\mobile.jpg",
+      "PackagePath": "staticwebassets\\image\\mobile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\mobile1.webp",
+      "PackagePath": "staticwebassets\\image\\mobile1.webp"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\oneplus.jpg",
+      "PackagePath": "staticwebassets\\image\\oneplus.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\oneplus11r.jpg",
+      "PackagePath": "staticwebassets\\image\\oneplus11r.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\oneplus9.jpg",
+      "PackagePath": "staticwebassets\\image\\oneplus9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p1.png",
+      "PackagePath": "staticwebassets\\image\\p1.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p10.jpg",
+      "PackagePath": "staticwebassets\\image\\p10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p11.jpg",
+      "PackagePath": "staticwebassets\\image\\p11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p12.jpg",
+      "PackagePath": "staticwebassets\\image\\p12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p13.png",
+      "PackagePath": "staticwebassets\\image\\p13.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p14.png",
+      "PackagePath": "staticwebassets\\image\\p14.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p15.png",
+      "PackagePath": "staticwebassets\\image\\p15.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p16.png",
+      "PackagePath": "staticwebassets\\image\\p16.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p17.png",
+      "PackagePath": "staticwebassets\\image\\p17.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p18.png",
+      "PackagePath": "staticwebassets\\image\\p18.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p19.png",
+      "PackagePath": "staticwebassets\\image\\p19.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p2.png",
+      "PackagePath": "staticwebassets\\image\\p2.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p20.png",
+      "PackagePath": "staticwebassets\\image\\p20.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p3.png",
+      "PackagePath": "staticwebassets\\image\\p3.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p4.png",
+      "PackagePath": "staticwebassets\\image\\p4.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p5.png",
+      "PackagePath": "staticwebassets\\image\\p5.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p6.png",
+      "PackagePath": "staticwebassets\\image\\p6.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p7.png",
+      "PackagePath": "staticwebassets\\image\\p7.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p8.png",
+      "PackagePath": "staticwebassets\\image\\p8.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\p9.jpg",
+      "PackagePath": "staticwebassets\\image\\p9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\poco.avif",
+      "PackagePath": "staticwebassets\\image\\poco.avif"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\poco.webp",
+      "PackagePath": "staticwebassets\\image\\poco.webp"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\product.svg",
+      "PackagePath": "staticwebassets\\image\\product.svg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\redmi.jpg",
+      "PackagePath": "staticwebassets\\image\\redmi.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\topcard1.png",
+      "PackagePath": "staticwebassets\\image\\topcard1.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\topcard2.png",
+      "PackagePath": "staticwebassets\\image\\topcard2.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\topcard3.png",
+      "PackagePath": "staticwebassets\\image\\topcard3.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\up-arrow.png",
+      "PackagePath": "staticwebassets\\image\\up-arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\image\\vivo.jpg",
+      "PackagePath": "staticwebassets\\image\\vivo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Monali.Shinde\\Desktop\\Xuint\\ProductManagement\\ProductManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.ProductManagement.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.ProductManagement.props",
+      "PackagePath": "build\\ProductManagement.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ProductManagement.props",
+      "PackagePath": "buildMultiTargeting\\ProductManagement.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.ProductManagement.props",
+      "PackagePath": "buildTransitive\\ProductManagement.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

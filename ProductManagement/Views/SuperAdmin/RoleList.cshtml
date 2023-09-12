@@ -1,0 +1,33 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "Role List";
+    Layout = "_LayoutSuperAdmin";
+}
+
+<br />
+<h2>Role List</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Role Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var roleName in Model)
+            {
+                <tr>
+                    <td>@roleName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No roles found.</p>
+}
+

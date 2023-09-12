@@ -1,0 +1,63 @@
+﻿@model List<ProductManagement.Models.DomainModel.ProductModel>
+
+@{
+    ViewData["Title"] = "Products";
+    Layout = "_LayoutUser";
+}
+<br />
+<h2>@ViewData["Title"]</h2>
+<br />
+<div class="row">
+    @{
+        var bookImages = new List<string>
+    {
+    "https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Image.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPzYjr2_M7wXAtZxtrKK1JK65ezPOU5kO0xw_jVIR868EgyOI1KExNbnXIcUey1z5RKE&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa4j_T_sSI3OL0vZ0xSF68RYa1CUt7O89r8Q&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtoxwc4aPa5A8u0IzagzCS5SfmcBeh45j6XTq1iX86Be-qc9MbMBAxQW8DJQq77vETwRg&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC99u1hAtCcETAlNlzmKErlqCQiazLTB9VhA&usqp=CAU"
+    };
+        var random = new Random();
+    }
+
+    @foreach (var product in Model)
+    {
+        var randomImageUrl = bookImages[random.Next(bookImages.Count)];
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="@randomImageUrl" class="card-img-top" alt="Phone Image" style="height: 200px; width: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Price: $@product.Price</p>
+                    <button style="background-color:#1c1c50" class="btn btn-primary" onclick="addToCart('@product.Id', @product.Price)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    let cart = [];
+
+    function addToCart(productId, price) {
+        cart.push({ id: productId, price: price });
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const cartItemCountElement = document.getElementById('cartItemCount');
+        if (cartItemCountElement) {
+            const cartItemCount = cart.length;
+            cartItemCountElement.textContent = cartItemCount;
+        }
+    }
+
+    function calculateTotalPrice() {
+        var total = 0;
+        for (var i = 0; i < cart.length; i++) {
+            total += cart[i].price;
+        }
+        return total;
+    }
+</script>

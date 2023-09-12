@@ -1,0 +1,41 @@
+﻿@model List<ProductManagement.Models.ViewModel.SuperAdminDashboardViewModel>
+@{
+    ViewData["Title"] = "Dashboard Super Admin";
+    Layout = "_LayoutSuperAdmin";
+}
+<br />
+<h2>Admin User Management</h2>
+<br />
+<div>
+    <a asp-action="AddAdmin" class="btn btn-dark">Add Admin</a>
+</div>
+<br />
+<table aria-describedby="mydesc" class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td> 
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.Role</td>
+                <td>
+                    <a asp-action="EditAdmin" asp-controller="SuperAdmin" asp-route-id="@user.Id" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("DeleteAdmin", "SuperAdmin", new { id = user.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

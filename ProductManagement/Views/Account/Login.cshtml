@@ -1,0 +1,50 @@
+﻿@model ProductManagement.Models.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login Page";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top:20px;     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 523px;
+color:black;
+    margin-left: 296px;">
+         @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center text-white">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Login" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email</label>
+                            <input type="email" asp-for="Email" class="form-control" id="Email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Password</label>
+                            <input type="password" asp-for="Password" class="form-control" id="Password" required>
+                            <div class="invalid-feedback">
+                                Please provide a password.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" asp-for="RememberMe" class="form-check-input" id="RememberMe">
+                            <label class="form-check-label" for="RememberMe">Remember me</label>
+                        </div>
+                        <button  type="submit" class="btn btn-outline-dark">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

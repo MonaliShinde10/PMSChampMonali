@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Edit User";
+    Layout = "_LayoutSuperAdmin";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-6">
+
+        <form method="post">
+            <div class="form-group">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="FirstName" class="form-control" value="@Model.FirstName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="LastName" class="form-control" value="@Model.LastName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Role">Role:</label><br />
+                <input type="radio" id="User" name="Role" value="User" @(Model.Role == "User" ? "checked" : "") /> User
+                <input type="radio" id="Admin" name="Role" value="Admin" @(Model.Role == "Admin" ? "checked" : "") /> Admin
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</div>
