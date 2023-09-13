@@ -291,12 +291,9 @@ namespace TestProduct
             Assert.Equal("Account", redirectResult?.ControllerName);
            userServiceMock.Verify(service => service.LogoutAsync(), Times.Once);
         }
-
-
         [Fact]
         public async Task Login_InvalidLoginAttempt_ReturnsViewWithModelError()
         {
-            // Arrange
             var userServiceMock = new Mock<IUserService>();
             userServiceMock.Setup(x => x.LoginAsync(It.IsAny<LoginViewModel>())).ReturnsAsync(false);
 
@@ -307,13 +304,10 @@ namespace TestProduct
                 Password = "invalidpassword"
             };
 
-            // Act
             var result = await controller.Login(model) as ViewResult;
 
             Assert.NotNull(result);
             Assert.False(controller.ModelState.IsValid);
-
-            // Iterate through error messages and check for the specific error message
             var errorMessages = result.ViewData.ModelState[""].Errors;
             var containsErrorMessage = errorMessages.Any(error => error.ErrorMessage == "Invalid login attempt.");
             Assert.True(containsErrorMessage, "Expected error message not found.");
