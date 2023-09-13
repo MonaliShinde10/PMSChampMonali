@@ -36,7 +36,6 @@ namespace ProductManagement.Data
 
         public static async Task InitializeUsers(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            // Create SuperAdmin user
             var superAdmin = await userManager.FindByEmailAsync("superadmin@example.com");
             if (superAdmin == null)
             {
@@ -56,7 +55,6 @@ namespace ProductManagement.Data
                 await userManager.AddToRoleAsync(superAdmin, superAdminRole.Name);
             }
 
-            // Create Admin user and add Admin role
             var admin = await userManager.FindByEmailAsync("admin@example.com");
             if (admin == null)
             {
@@ -75,8 +73,6 @@ namespace ProductManagement.Data
             {
                 await userManager.AddToRoleAsync(admin, adminRole.Name);
             }
-
-            // Create User user and add User role
             var user = await userManager.FindByEmailAsync("user@example.com");
             if (user == null)
             {

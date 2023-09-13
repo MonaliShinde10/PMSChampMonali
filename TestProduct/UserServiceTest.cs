@@ -68,23 +68,18 @@ namespace TestProduct
         [Fact]
         public async Task RegisterAsync_InvalidModel_ReturnsFalse()
         {
-            // Arrange
             var signInManagerMock = GetMockSignInManager();
-            var userManagerMock = GetMockUserManager(false); // User creation will fail
+            var userManagerMock = GetMockUserManager(false); 
             var roleManagerMock = GetMockRoleManager();
             var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
             var registerModel = new RegisterViewModel
             {
                 Email = "test@example.com",
-                Password = "InvalidPassword", // Assuming invalid password
+                Password = "InvalidPassword", 
                 FirstName = "John",
                 LastName = "Doe"
             };
-
-            // Act
             var result = await userService.RegisterAsync(registerModel);
-
-            // Assert
             Assert.False(result);
         }
         [Fact]
