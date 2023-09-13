@@ -1,10 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace ProductManagement.Models.ViewModel
 {
-    public class RegisterViewModel 
+    public class RegisterViewModel
     {
+        public RegisterViewModel()
+        {
+            FirstName = "";
+            LastName = "";
+            Email = "";
+            Password = "";
+            ConfirmPassword = "";
+        }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -12,7 +19,6 @@ namespace ProductManagement.Models.ViewModel
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-     
 
         [Required]
         [DataType(DataType.Password)]
@@ -24,6 +30,5 @@ namespace ProductManagement.Models.ViewModel
         public string ConfirmPassword { get; set; }
 
         public string Role { get; set; } = string.Empty;
-
     }
 }

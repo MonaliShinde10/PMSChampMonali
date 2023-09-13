@@ -27,6 +27,29 @@ namespace TestProduct
             var result = controller.Register() as ViewResult;
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public void Register_InvalidModel_ReturnsViewResult()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var controller = new AccountController(userServiceMock.Object);
+            controller.ModelState.AddModelError("SomeField", "Some error message");
+
+            var result = controller.Register() as ViewResult;
+
+            Assert.NotNull(result);
+        }
+        #nullable disable
+        [Fact]
+        public void Register_NullUserService_ReturnsViewResult()
+        {
+            IUserService userService = null;
+            var controller = new AccountController(userService);
+            var result = controller.Register() as ViewResult;
+
+            Assert.NotNull(result);
+        }
+
         [Fact]
         public void Login_Get_ReturnsViewResult()
         {
@@ -37,6 +60,25 @@ namespace TestProduct
             Assert.NotNull(result);
         }
         [Fact]
+        public void Login_InvalidModel_ReturnsViewResult()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var controller = new AccountController(userServiceMock.Object);
+            controller.ModelState.AddModelError("SomeField", "Some error message");
+            var result = controller.Login() as ViewResult;
+            Assert.NotNull(result);
+        }
+        [Fact]
+        public void Login_NullUserService_ReturnsViewResult()
+        {
+            IUserService userService = null;
+            var controller = new AccountController(userService);
+            var result = controller.Login() as ViewResult;
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
         public void Index_Get_ReturnsViewResult()
         {
             var userServiceMock = new Mock<IUserService>();
@@ -46,12 +88,49 @@ namespace TestProduct
             Assert.NotNull(result);
         }
         [Fact]
+        public void Index_InvalidModel_ReturnsViewResult()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var controller = new AccountController(userServiceMock.Object);
+            controller.ModelState.AddModelError("SomeField", "Some error message");
+            var result = controller.Index() as ViewResult;
+            Assert.NotNull(result);
+        }
+        [Fact]
+        public void Index_NullUserService_ReturnsViewResult()
+        {
+            IUserService userService = null; 
+            var controller = new AccountController(userService);
+            var result = controller.Index() as ViewResult;
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
         public void AccessDenied_Get_ReturnsViewResult()
         {
             var userServiceMock = new Mock<IUserService>();
             var controller = new AccountController(userServiceMock.Object);
             var result = controller.AccessDenied() as ViewResult;
 
+            Assert.NotNull(result);
+        }
+        [Fact]
+        public void AccessDenied_InvalidModel_ReturnsViewResult()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            var controller = new AccountController(userServiceMock.Object);
+            controller.ModelState.AddModelError("SomeField", "Some error message");
+            var result = controller.AccessDenied() as ViewResult;
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void AccessDenied_NullUserService_ReturnsViewResult()
+        {
+            IUserService userService = null; 
+            var controller = new AccountController(userService);
+            var result = controller.AccessDenied() as ViewResult;
             Assert.NotNull(result);
         }
 
@@ -80,6 +159,7 @@ namespace TestProduct
             Assert.NotNull(result);
             Assert.Equal(model, result.Model);
         }
+       
 
         [Fact]
         public async Task Login_ValidCredentialsAsUser_RedirectsToCorrectDashboard()
@@ -179,7 +259,23 @@ namespace TestProduct
             Assert.False(controller.ModelState.IsValid);
             Assert.Contains("Invalid login attempt.", controller.ModelState?[""]?.Errors[0]?.ErrorMessage);
         }
+        [Fact]
+        public async Task Login_InvalidCredentials_ReturnsViewResult()
+        {
+            var userServiceMock = new Mock<IUserService>();
+            userServiceMock.Setup(service => service.LoginAsync(It.IsAny<LoginViewModel>()))
+                .ReturnsAsync(false); 
 
+            var controller = new AccountController(userServiceMock.Object);
+            var loginViewModel = new LoginViewModel
+            {
+                Email = "invalidemail@example.com",
+                Password = "invalidpassword"
+            };
+            var result = await controller.Login(loginViewModel) as ViewResult;
+
+            Assert.NotNull(result);
+        }   
         [Fact]
         public async Task Logout_ReturnsRedirectToAction_Index()
         {

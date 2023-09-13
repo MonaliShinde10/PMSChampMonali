@@ -86,7 +86,6 @@ C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Composition.Runtime.dll
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Composition.TypedParts.dll
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
@@ -327,3 +326,10 @@ C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\obj\Debug\net
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\obj\Debug\net6.0\TestProduct.pdb
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\obj\Debug\net6.0\TestProduct.genruntimeconfig.cache
 C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\obj\Debug\net6.0\ref\TestProduct.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Monali.Shinde\Desktop\Xuint\ProductManagement\TestProduct\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

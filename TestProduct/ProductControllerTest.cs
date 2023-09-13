@@ -6,6 +6,8 @@ using Moq;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using ProductManagement.Data.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TestProduct
 {
@@ -281,6 +283,19 @@ namespace TestProduct
             Assert.NotNull(result);
             Assert.Equal(invalidProduct, result.Model); 
             productServiceMock.Verify(service => service.UpdateProduct(It.IsAny<ProductModel>()), Times.Never);
+        }
+        [Fact]
+        public void AddToCart_InvalidProduct_RedirectsToViewProducts()
+        {
+            var productServiceMock = new Mock<IProductService>();
+            var controller = new UserController(productServiceMock.Object);
+
+            var productId = Guid.NewGuid();
+            productServiceMock.Setup(p => p.GetProductById(productId)).Returns((ProductModel)null);
+            var result = controller.AddToCart(productId) as RedirectToActionResult;
+
+            Assert.NotNull(result);
+            Assert.Equal("ViewProducts", result.ActionName);
         }
     }
 }

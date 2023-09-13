@@ -48,40 +48,51 @@ namespace TestProduct
         [Fact]
         public async Task RegisterAsync_ValidModel_ReturnsTrue()
         {
-            var signInManagerMock = GetMockSignInManager();
             var userManagerMock = GetMockUserManager();
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
+            var signInManagerMock = GetMockSignInManager();
+
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, null);
+
             var registerModel = new RegisterViewModel
             {
                 Email = "test@example.com",
-                Password = "Password123", 
+                Password = "Password123",
                 FirstName = "John",
                 LastName = "Doe"
             };
 
-            var result = await userService.RegisterAsync(registerModel);
+            userManagerMock.Setup(m => m.CreateAsync(It.IsAny<UserModel>(), It.IsAny<string>()))
+                .ReturnsAsync(IdentityResult.Success);
 
+            userManagerMock.Setup(m => m.AddToRoleAsync(It.IsAny<UserModel>(), It.IsAny<string>()))
+                .ReturnsAsync(IdentityResult.Success);
+            var result = await userService.RegisterAsync(registerModel);
             Assert.True(result);
         }
 
         [Fact]
         public async Task RegisterAsync_InvalidModel_ReturnsFalse()
         {
+            var userManagerMock = GetMockUserManager();
             var signInManagerMock = GetMockSignInManager();
-            var userManagerMock = GetMockUserManager(false); 
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
+
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, null);
+
             var registerModel = new RegisterViewModel
             {
                 Email = "test@example.com",
-                Password = "InvalidPassword", 
+                Password = "WeakPwd", 
                 FirstName = "John",
                 LastName = "Doe"
             };
+
+            userManagerMock.Setup(m => m.CreateAsync(It.IsAny<UserModel>(), It.IsAny<string>()))
+                .ReturnsAsync(IdentityResult.Failed(new IdentityError { Code = "InvalidPassword", Description = "Password is invalid" }));
             var result = await userService.RegisterAsync(registerModel);
+
             Assert.False(result);
         }
+
         [Fact]
         public async Task FindByEmailAsync_ValidEmail_ReturnsUser()
         {

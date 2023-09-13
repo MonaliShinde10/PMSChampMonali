@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">Price: $@product.Price</p>
-                    <button style="background-color:#1c1c50" class="btn btn-primary" onclick="addToCart('@product.Id', @product.Price)">Add to Cart</button>
+                    <button style="background-color:#1c1c50" class="btn btn-primary" onclick="location.href='@Url.Action("AddToCart", "User", new { productId = product.Id })'">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -40,8 +40,8 @@
 <script>
     let cart = [];
 
-    function addToCart(productId, price) {
-        cart.push({ id: productId, price: price });
+    function addToCart(productId, productName, price) {
+        cart.push({ id: productId, name: productName, price: price });
         updateCartUI();
     }
 
@@ -61,3 +61,5 @@
         return total;
     }
 </script>
+
+

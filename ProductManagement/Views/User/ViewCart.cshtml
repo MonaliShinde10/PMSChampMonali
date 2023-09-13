@@ -1,0 +1,30 @@
+﻿@model List<ProductManagement.Models.DomainModel.ProductModel>
+
+@{
+    ViewData["Title"] = "View Cart";
+    Layout = "_LayoutUser";
+    decimal subtotal = 0;
+}
+<br />
+<div class="col-md-8">
+    <h3>Items in Cart</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                subtotal += item.Price;
+                <tr>
+                    <td>@item.Name</td>
+                    <td>$@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Total Price: $@subtotal</p> 
+</div>

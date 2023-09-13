@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.InMemory;
+
 using ProductManagement.Data.Repositories;
 using ProductManagement.Data;
 using ProductManagement.Models.DomainModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Xunit;
 
 namespace TestProduct
 {
@@ -18,10 +18,8 @@ namespace TestProduct
 
         public ProductRepositoryTests()
         {
-            var connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=test_db;Trusted_Connection=True;MultipleActiveResultSets=true";
-
             _options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseSqlServer(connectionString)
+                .UseInMemoryDatabase(databaseName: "TestDatabase")
                 .Options;
 
             _context = new AppDbContext(_options);
@@ -29,6 +27,7 @@ namespace TestProduct
 
             _context.Database.EnsureCreated();
         }
+
 
         [Fact]
         public void AddProduct_ShouldAddProductToDatabase()
@@ -46,6 +45,7 @@ namespace TestProduct
             Assert.Equal(product.Name, addedProduct.Name);
             Assert.Equal(product.Price, addedProduct.Price);
         }
+
         [Fact]
         public void UpdateProduct_ShouldUpdateExistingProduct()
         {
@@ -63,12 +63,15 @@ namespace TestProduct
                 Name = "Updated Product",
                 Price = 250000
             };
+
             _repository.UpdateProduct(updatedProduct);
+
             var productInDatabase = _context.Products.Find(originalProduct.Id);
             Assert.NotNull(productInDatabase);
             Assert.Equal(updatedProduct.Name, productInDatabase.Name);
             Assert.Equal(updatedProduct.Price, productInDatabase.Price);
         }
+
         [Fact]
         public void DeleteProduct_ShouldRemoveProductFromDatabase()
         {
@@ -82,8 +85,9 @@ namespace TestProduct
             _repository.DeleteProduct(product.Id);
 
             var productInDatabase = _context.Products.Find(product.Id);
-            Assert.Null(productInDatabase); 
+            Assert.Null(productInDatabase);
         }
+
         [Fact]
         public void GetAllProducts_ShouldReturnAllProducts()
         {
@@ -98,6 +102,7 @@ namespace TestProduct
             {
                 _repository.AddProduct(product);
             }
+
             var allProducts = _repository.GetAllProducts();
             Assert.NotNull(allProducts);
             Assert.Equal(productsToAdd.Count, allProducts.Count);
@@ -139,12 +144,11 @@ namespace TestProduct
             Assert.Equal(productToAdd.Price, retrievedProduct.Price);
         }
 
-
         public void Dispose()
         {
+            // Clean up and dispose of the in-memory database
             _context.Database.EnsureDeleted();
             _context.Dispose();
         }
-
     }
 }

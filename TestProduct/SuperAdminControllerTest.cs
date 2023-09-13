@@ -400,15 +400,14 @@ namespace TestProduct
             superAdminServiceMock.Setup(service => service.AllAdmins())
                 .Returns(new List<SuperAdminDashboardViewModel>
                 {
-                new SuperAdminDashboardViewModel
-                {
-                    Id = Guid.NewGuid().ToString(), 
-                    Email = "admin@example.com",
-                    FirstName = "John",
-                    LastName = "Doe",
-                    Role = "SuperAdmin"
-                },
-                   
+            new SuperAdminDashboardViewModel
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "admin@example.com",
+                FirstName = "John",
+                LastName = "Doe",
+                Role = "SuperAdmin"
+            }
                 });
 
             var controller = new SuperAdminController(superAdminServiceMock.Object);
@@ -419,8 +418,8 @@ namespace TestProduct
             Assert.IsType<List<SuperAdminDashboardViewModel>>(result.Model);
 
             var model = result.Model as List<SuperAdminDashboardViewModel>;
-            Assert.NotEmpty(model); 
-            Assert.Equal(1, model.Count); 
+            Assert.NotNull(model);
+            Assert.Single(model); 
         }
 
 

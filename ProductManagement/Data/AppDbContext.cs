@@ -11,8 +11,9 @@ namespace ProductManagement.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
+            Products = Set<ProductModel>();
         }
+
         public DbSet<ProductModel> Products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
