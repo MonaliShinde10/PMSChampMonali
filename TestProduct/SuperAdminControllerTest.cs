@@ -302,8 +302,5 @@ namespace TestProduct
             Assert.NotNull(model);
             Assert.Single(model);
         }
-
-
-
     }
 }

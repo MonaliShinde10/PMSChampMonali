@@ -117,7 +117,7 @@ namespace ProductManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                var adminToUpdate = new EditAdminViewModel
+                var userToUpdate = new EditAdminViewModel
                 {
                     Id = model.Id,
                     Email = model.Email,
@@ -126,7 +126,7 @@ namespace ProductManagement.Controllers
                     Role = model.Role
                 };
 
-                _superAdminService.EditUser(adminToUpdate);
+                _superAdminService.EditUser(userToUpdate);
 
                 return RedirectToAction("UserList");
             }

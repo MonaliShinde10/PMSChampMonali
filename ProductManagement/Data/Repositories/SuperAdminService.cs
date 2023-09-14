@@ -23,7 +23,7 @@ namespace ProductManagement.Data.Repositories
 
         public void AddAdmin(AddAdminViewModel admin)
         {
-            var userModel = new UserModel
+            var adminModel = new UserModel
             {
                 UserName = admin.Email,
                 Email = admin.Email,
@@ -31,11 +31,11 @@ namespace ProductManagement.Data.Repositories
                 LastName = admin.LastName,
             };
 
-            var result = _userManager.CreateAsync(userModel, admin.Password).Result;
+            var result = _userManager.CreateAsync(adminModel, admin.Password).Result;
 
             if (result.Succeeded)
             {
-                _userManager.AddToRoleAsync(userModel, admin.Role).Wait();
+                _userManager.AddToRoleAsync(adminModel, admin.Role).Wait();
             }
             else
             {
