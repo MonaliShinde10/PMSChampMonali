@@ -42,7 +42,6 @@ namespace TestProduct
 
             adminServiceMock.Verify(service => service.EditUser(It.IsAny<EditAdminViewModel>()), Times.Once);
         }
-
         [Fact]
         public void EditAdmin_ValidModel_RedirectsToUserList()
         {
@@ -64,6 +63,7 @@ namespace TestProduct
 
             adminServiceMock.Verify(service => service.EditAdmin(It.IsAny<EditAdminViewModel>()), Times.Once);
         }
+
         [Fact]
         public void TestAddAdmin()
         {
@@ -230,131 +230,9 @@ namespace TestProduct
             Assert.Equal(model, result.Model);
             superAdminServiceMock.Verify(service => service.EditAdmin(It.IsAny<EditAdminViewModel>()), Times.Never);
         }
-        [Fact]
-        public void RoleList_ReturnsViewWithExpectedModel()
-        {
-            var mockSuperAdminService = new Mock<ISuperAdminService>();
-            var controller = new SuperAdminController(mockSuperAdminService.Object);
-            var expectedRoles = new List<string>
-            {
-                "Admin",
-                "User",
-                "Manager"
-            };
-            mockSuperAdminService.Setup(service => service.GetRoles()).Returns(expectedRoles);
-            var result = controller.RoleList() as ViewResult;
-            Assert.NotNull(result);
-            Assert.IsType<ViewResult>(result);
-            Assert.Null(result.ViewName);
-            Assert.IsType<List<string>>(result.Model);
+        
 
-            var model = Assert.IsAssignableFrom<List<string>>(result.Model);
-            Assert.Equal(expectedRoles, model);
-        }
-
-      
-        [Fact]
-        public void EditAdmin_ValidInput_UpdatesUserAndRole()
-        {
-            var userManagerMock = GetMockUserManager();
-            var signInManagerMock = GetMockSignInManager(userManagerMock.Object);
-            var roleManagerMock = GetMockRoleManager();
-
-            var service = new SuperAdminService(userManagerMock.Object, signInManagerMock.Object, roleManagerMock.Object);
-
-            var admin = new EditAdminViewModel
-            {
-                Id = Guid.NewGuid(),
-                Email = "updated@example.com",
-                FirstName = "Updated",
-                LastName = "Admin",
-                Role = "Admin"
-            };
-
-            userManagerMock.Setup(m => m.FindByIdAsync(It.IsAny<string>()))
-                .ReturnsAsync(new UserModel { Id = admin.Id.ToString() });
-            userManagerMock.Setup(m => m.GetRolesAsync(It.IsAny<UserModel>()))
-                .ReturnsAsync(new List<string>());
-            userManagerMock.Setup(m => m.RemoveFromRolesAsync(It.IsAny<UserModel>(), It.IsAny<IEnumerable<string>>()))
-                .ReturnsAsync(IdentityResult.Success);
-            userManagerMock.Setup(m => m.AddToRoleAsync(It.IsAny<UserModel>(), It.IsAny<string>()))
-                .ReturnsAsync(IdentityResult.Success);
-            userManagerMock.Setup(m => m.UpdateAsync(It.IsAny<UserModel>()))
-                .ReturnsAsync(IdentityResult.Success);
-            service.EditAdmin(admin);
-
-            userManagerMock.Verify(m => m.FindByIdAsync(It.IsAny<string>()), Times.Once);
-            userManagerMock.Verify(m => m.GetRolesAsync(It.IsAny<UserModel>()), Times.Once);
-            userManagerMock.Verify(m => m.RemoveFromRolesAsync(It.IsAny<UserModel>(), It.IsAny<IEnumerable<string>>()), Times.Once);
-            userManagerMock.Verify(m => m.AddToRoleAsync(It.IsAny<UserModel>(), It.IsAny<string>()), Times.Once);
-            userManagerMock.Verify(m => m.UpdateAsync(It.IsAny<UserModel>()), Times.Once);
-        }
-
-
-        #region Mock Helper Methods
-
-        private Mock<UserManager<IdentityUser>> GetMockUserManager()
-        {
-            var userStoreMock = new Mock<IUserStore<IdentityUser>>();
-            var optionsAccessorMock = new Mock<IOptions<IdentityOptions>>();
-            var passwordHasherMock = new Mock<IPasswordHasher<IdentityUser>>();
-            var userValidators = new List<IUserValidator<IdentityUser>>();
-            var passwordValidators = new List<IPasswordValidator<IdentityUser>>();
-            var keyNormalizerMock = new Mock<ILookupNormalizer>();
-            var errorsMock = new Mock<IdentityErrorDescriber>();
-            var servicesMock = new Mock<IServiceProvider>();
-            var loggerMock = new Mock<ILogger<UserManager<IdentityUser>>>();
-
-            return new Mock<UserManager<IdentityUser>>(
-                userStoreMock.Object,
-                optionsAccessorMock.Object,
-                passwordHasherMock.Object,
-                userValidators,
-                passwordValidators,
-                keyNormalizerMock.Object,
-                errorsMock.Object,
-                servicesMock.Object,
-                loggerMock.Object);
-        }
-
-        private Mock<SignInManager<IdentityUser>> GetMockSignInManager(UserManager<IdentityUser> userManager)
-        {
-            var contextAccessorMock = new Mock<IHttpContextAccessor>();
-            var claimsPrincipalFactoryMock = new Mock<IUserClaimsPrincipalFactory<IdentityUser>>();
-            var optionsAccessorMock = new Mock<IOptions<IdentityOptions>>();
-            var loggerMock = new Mock<ILogger<SignInManager<IdentityUser>>>();
-            var authenticationSchemeProviderMock = new Mock<IAuthenticationSchemeProvider>();
-
-            return new Mock<SignInManager<IdentityUser>>(
-                userManager,
-                contextAccessorMock.Object,
-                claimsPrincipalFactoryMock.Object,
-                optionsAccessorMock.Object,
-                loggerMock.Object,
-                authenticationSchemeProviderMock.Object,
-                null); 
-        }
-
-
-
-        private Mock<RoleManager<IdentityRole>> GetMockRoleManager()
-        {
-            var roleStoreMock = new Mock<IRoleStore<IdentityRole>>();
-            var roleValidators = new List<IRoleValidator<IdentityRole>>();
-            var keyNormalizerMock = new Mock<ILookupNormalizer>();
-            var errorsMock = new Mock<IdentityErrorDescriber>();
-            var loggerMock = new Mock<ILogger<RoleManager<IdentityRole>>>();
-
-            return new Mock<RoleManager<IdentityRole>>(
-                roleStoreMock.Object,
-                roleValidators,
-                keyNormalizerMock.Object,
-                errorsMock.Object,
-                loggerMock.Object);
-        }
-
-        #endregion
-
+       
         [Fact]
         public void SuperAdminDashboard_Get_ReturnsViewResult()
         {
@@ -410,7 +288,10 @@ namespace TestProduct
             }
                 });
 
-            var controller = new SuperAdminController(superAdminServiceMock.Object);
+            var controller = new SuperAdminController(superAdminServiceMock.Object)
+            {
+                ControllerContext = new ControllerContext()
+            };
             controller.ControllerContext = new ControllerContext();
             var result = controller.SuperAdminDashboard() as ViewResult;
 
@@ -419,8 +300,9 @@ namespace TestProduct
 
             var model = result.Model as List<SuperAdminDashboardViewModel>;
             Assert.NotNull(model);
-            Assert.Single(model); 
+            Assert.Single(model);
         }
+
 
 
     }

@@ -13,13 +13,11 @@ namespace ProductManagement.Data.Repositories
     public class SuperAdminService : ISuperAdminService
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public SuperAdminService(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public SuperAdminService(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
             _roleManager = roleManager;
         }
 
@@ -41,11 +39,12 @@ namespace ProductManagement.Data.Repositories
             }
             else
             {
-                
+                foreach (var error in result.Errors)
+                {
+                    Console.WriteLine($"Error: {error.Description}");
+                }
             }
         }
-
-
         public void EditAdmin(EditAdminViewModel admin)
         {
             var user = _userManager.FindByIdAsync(admin.Id.ToString()).Result;
@@ -56,7 +55,6 @@ namespace ProductManagement.Data.Repositories
                 ((UserModel)user).FirstName = admin.FirstName;
                 ((UserModel)user).LastName = admin.LastName;
 
-                // Update roles if necessary using UserManager
                 var currentRoles = _userManager.GetRolesAsync(user).Result;
                 if (!currentRoles.Contains(admin.Role))
                 {
@@ -157,9 +155,15 @@ namespace ProductManagement.Data.Repositories
         }
     
 
-        public List<SuperAdminDashboardViewModel> AllAdmins()
+    
+    public List<SuperAdminDashboardViewModel> AllAdmins()
         {
             var admins = _userManager.GetUsersInRoleAsync("Admin").Result;
+
+            if (admins == null)
+            {
+                return new List<SuperAdminDashboardViewModel>();
+            }
 
             var adminList = admins.Select(user =>
             {
@@ -188,24 +192,17 @@ namespace ProductManagement.Data.Repositories
         {
             var admins = _userManager.GetUsersInRoleAsync("User").Result;
 
-            var adminList = admins.Select(user =>
-            {
-                if (user is UserModel userModel)
+            var adminList = admins
+                .OfType<UserModel>() 
+                .Select(user => new SuperAdminUserModel
                 {
-                    return new SuperAdminUserModel
-                    {
-                        Id = userModel.Id,
-                        Email = userModel.Email,
-                        FirstName = userModel.FirstName,
-                        LastName = userModel.LastName,
-                        Role = string.Join(", ", _userManager.GetRolesAsync(user).Result)
-                    };
-                }
-                else
-                {
-                    return null;
-                }
-            }).Where(adminViewModel => adminViewModel != null).ToList();
+                    Id = user.Id,
+                    Email = user.Email ?? "Unknown Email",
+                    FirstName = user.FirstName ?? "Unknown FirstName",
+                    LastName = user.LastName ?? "Unknown LastName",
+                    Role = string.Join(", ", _userManager.GetRolesAsync(user).Result)
+                })
+                .ToList();
 
             return adminList;
         }

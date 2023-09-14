@@ -8,16 +8,13 @@ namespace ProductManagement.Services
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
 
         public UserService(
             SignInManager<IdentityUser> signInManager,
-            UserManager<IdentityUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+            UserManager<IdentityUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-            _roleManager = roleManager;
         }
 
         public async Task<bool> LoginAsync(LoginViewModel model)

@@ -18,8 +18,7 @@ namespace TestProduct
         {
             var signInManagerMock = GetMockSignInManager(true);
             var userManagerMock = GetMockUserManager();
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
             var loginModel = new LoginViewModel
             {
                 Email = "test@example.com",
@@ -34,12 +33,11 @@ namespace TestProduct
         {
             var signInManagerMock = GetMockSignInManager(false);
             var userManagerMock = GetMockUserManager();
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
             var loginModel = new LoginViewModel
             {
                 Email = "test@example.com",
-                Password = "InvalidPassword" 
+                Password ="invalid#123",
             };
             var result = await userService.LoginAsync(loginModel);
             Assert.False(result);
@@ -48,10 +46,9 @@ namespace TestProduct
         [Fact]
         public async Task RegisterAsync_ValidModel_ReturnsTrue()
         {
+            var signInManagerMock = GetMockSignInManager(true);
             var userManagerMock = GetMockUserManager();
-            var signInManagerMock = GetMockSignInManager();
-
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, null);
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
 
             var registerModel = new RegisterViewModel
             {
@@ -73,10 +70,9 @@ namespace TestProduct
         [Fact]
         public async Task RegisterAsync_InvalidModel_ReturnsFalse()
         {
+            var signInManagerMock = GetMockSignInManager(true);
             var userManagerMock = GetMockUserManager();
-            var signInManagerMock = GetMockSignInManager();
-
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, null);
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
 
             var registerModel = new RegisterViewModel
             {
@@ -96,11 +92,9 @@ namespace TestProduct
         [Fact]
         public async Task FindByEmailAsync_ValidEmail_ReturnsUser()
         {
-            var userManagerMock = GetMockUserManager(true);
-            var signInManagerMock = GetMockSignInManager();
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
-
+            var signInManagerMock = GetMockSignInManager(true);
+            var userManagerMock = GetMockUserManager();
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
             var email = "test@example.com";
             var user = new IdentityUser { Email = email };
             userManagerMock.Setup(m => m.FindByEmailAsync(email))
@@ -115,11 +109,9 @@ namespace TestProduct
         [Fact]
         public async Task GetRolesAsync_ValidEmail_ReturnsRoles()
         {
+            var signInManagerMock = GetMockSignInManager(true);
             var userManagerMock = GetMockUserManager();
-            var signInManagerMock = GetMockSignInManager();
-            var roleManagerMock = GetMockRoleManager();
-            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object, roleManagerMock.Object);
-
+            var userService = new UserService(signInManagerMock.Object, userManagerMock.Object);
             var email = "test@example.com";
             var user = new IdentityUser { Email = email };
             var roles = new List<string> { "User", "Admin" };
@@ -140,8 +132,9 @@ namespace TestProduct
         [Fact]
         public async Task LogoutAsync_SignsOutUser()
         {
-            var signInManagerMock = GetMockSignInManager();
-            var userService = new UserService(signInManagerMock.Object, null, null); 
+            var signInManagerMock = GetMockSignInManager(true);
+            
+            var userService = new UserService(signInManagerMock.Object, null); 
             await userService.LogoutAsync();
             signInManagerMock.Verify(
                 sm => sm.SignOutAsync(),
@@ -149,15 +142,15 @@ namespace TestProduct
                 "SignOutAsync should be called once to sign out the user.");
         }
 
-        private Mock<UserManager<IdentityUser>> GetMockUserManager(bool findUserResult = true)
+        private static Mock<UserManager<IdentityUser>> GetMockUserManager(bool findUserResult = true)
         {
             var store = new Mock<IUserStore<IdentityUser>>();
             var userManagerMock = new Mock<UserManager<IdentityUser>>(
                 store.Object,
                 Mock.Of<IOptions<IdentityOptions>>(),
                 Mock.Of<IPasswordHasher<IdentityUser>>(),
-                new IUserValidator<IdentityUser>[0],
-                new IPasswordValidator<IdentityUser>[0],
+                new List<IUserValidator<IdentityUser>>(),
+                new List<IPasswordValidator<IdentityUser>>(),
                 Mock.Of<ILookupNormalizer>(),
                 Mock.Of<IdentityErrorDescriber>(),
                 null,
@@ -170,7 +163,7 @@ namespace TestProduct
             return userManagerMock;
         }
 
-        private Mock<SignInManager<IdentityUser>> GetMockSignInManager(bool signInResult = true)
+        private static Mock<SignInManager<IdentityUser>> GetMockSignInManager(bool signInResult = true)
         {
             var userManagerMock = GetMockUserManager();
             var signInManagerMock = new Mock<SignInManager<IdentityUser>>(
@@ -194,18 +187,7 @@ namespace TestProduct
             return signInManagerMock;
         }
 
-        private Mock<RoleManager<IdentityRole>> GetMockRoleManager()
-        {
-            var store = new Mock<IRoleStore<IdentityRole>>();
-            var roleManagerMock = new Mock<RoleManager<IdentityRole>>(
-                store.Object,
-                null,
-                null,
-                null,
-                null
-            );
+ 
 
-            return roleManagerMock;
-        }
     }
 }
